@@ -1,6 +1,7 @@
 # SimulatorPermissions
 
 [![CI Build](https://github.com/MathewYaldo/SimulatorPermissions/workflows/CI%20Build/badge.svg)](https://github.com/MathewYaldo/SimulatorPermissions/)
+[![CI Status](https://img.shields.io/travis/MathewYaldo/SimulatorPermissions.svg?style=flat)](https://travis-ci.org/MathewYaldo/SimulatorPermissions)
 [![Version](https://img.shields.io/cocoapods/v/SimulatorPermissions.svg?style=flat)](https://cocoapods.org/pods/SimulatorPermissions)
 [![License](https://img.shields.io/cocoapods/l/SimulatorPermissions.svg?style=flat)](https://cocoapods.org/pods/SimulatorPermissions)
 [![Platform](https://img.shields.io/cocoapods/p/SimulatorPermissions.svg?style=flat)](https://cocoapods.org/pods/SimulatorPermissions)
