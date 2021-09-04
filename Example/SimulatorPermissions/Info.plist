@@ -35,5 +35,17 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>NSHomeKitUsageDescription</key>
+	<string>Needed for homekit tests</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Needed for tests</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Needed for tests</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Needed for tests</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Needed for tests</string>
+	<key></key>
+	<string></string>
 </dict>
 </plist>
