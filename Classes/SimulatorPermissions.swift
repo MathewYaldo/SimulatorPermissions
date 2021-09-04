@@ -97,12 +97,12 @@ public class SimulatorPermissions {
         let calendarAuthorizationStatus = EKEventStore.authorizationStatus(for: .event)
         let addressBookAuthorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
         let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
-        let microphoneAuthorizationStatus = AVAudioSession.sharedInstance().recordPermission()
+        //let microphoneAuthorizationStatus = AVAudioSession.sharedInstance().recordPermission()
         let reminderAuthorizationStatus = EKEventStore.authorizationStatus(for: .reminder)
         print(addressBookAuthorizationStatus == .authorized ? "Contacts Authorized ✅" : "Contacts Unauthorized ❌")
         print(calendarAuthorizationStatus == .authorized ? "Calendar Authorized ✅" : "Calendar Unauthorized ❌")
         print(cameraAuthorizationStatus == .authorized ? "Camera Authorized ✅" : "Camera Unauthorized ❌")
-        print(microphoneAuthorizationStatus == .granted ? "Microphone Authorized ✅" : "Microphone Unauthorized ❌")
+        //print(microphoneAuthorizationStatus == .granted ? "Microphone Authorized ✅" : "Microphone Unauthorized ❌")
         print(reminderAuthorizationStatus == .authorized ? "Reminders Authorized ✅" : "Reminders Unauthorized ❌")
         if #available(iOS 13.0, *) {
             let homekitAuthorizationStatus = HMHomeManager().authorizationStatus.contains(.authorized)
@@ -112,5 +112,5 @@ public class SimulatorPermissions {
             let photosAuthorizationStatus = PHPhotoLibrary.authorizationStatus(for: .addOnly)
             print(photosAuthorizationStatus == .authorized ? "Photos Authorized ✅" : "Photos Unauthorized ❌")
         }
- }
+    }
 }

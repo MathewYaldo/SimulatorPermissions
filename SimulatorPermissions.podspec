@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/MathewYaldo/SimulatorPermissions'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Mathew Yaldo' => 'mathewyaldo@oakland.edu' }
+  s.author           = { 'Mathew Yaldo' => 'mathewyaldo1@gmail.com' }
   s.source           = { :git => 'https://github.com/MathewYaldo/SimulatorPermissions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
