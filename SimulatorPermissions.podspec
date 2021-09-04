@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SimulatorPermissions'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SimulatorPermissions.'
+  s.summary          = 'Grants permission for services such as calendar, contacts, microphone, etc for iOS simulators for the purpose of unit testing.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,19 +18,23 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+'This library can be used to automatically grant permissions in the simulator for all services that need permissions such as camera, photos, calendar, reminders, etc. This is meant to help with unit testing certain parts of code that utilizes such services.'
                        DESC
 
-  s.homepage         = 'https://github.com/Mathew Yaldo/SimulatorPermissions'
+  s.homepage         = 'https://github.com/MathewYaldo/SimulatorPermissions'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Mathew Yaldo' => 'mathewyaldo@oakland.edu' }
-  s.source           = { :git => 'https://github.com/Mathew Yaldo/SimulatorPermissions.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MathewYaldo/SimulatorPermissions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'SimulatorPermissions/Classes/**/*'
+  s.ios.deployment_target = '12.0'
+  s.source_files = 'Classes/**/*'
+  s.swift_version = '5.0'
+  s.platforms = {
+      "ios": "12.0"
+  }
+  
   
   # s.resource_bundles = {
   #   'SimulatorPermissions' => ['SimulatorPermissions/Assets/*.png']

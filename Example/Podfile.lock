@@ -1,0 +1,16 @@
+PODS:
+  - SimulatorPermissions (0.1.0)
+
+DEPENDENCIES:
+  - SimulatorPermissions (from `../`)
+
+EXTERNAL SOURCES:
+  SimulatorPermissions:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SimulatorPermissions: c0718f0759c929b6c657464af557123d53b7cb5c
+
+PODFILE CHECKSUM: 609801975774fbd9b4ba57a39693af92d5ccd8e7
+
+COCOAPODS: 1.10.1
