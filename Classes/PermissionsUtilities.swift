@@ -8,6 +8,9 @@
 import Foundation
 
 public class PermissionsUtilities {
+    
+    public init() {}
+    
     public func getDocumentsDirectory() -> [String] {
         let directory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return directory

@@ -12,8 +12,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* SimulatorPermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* SimulatorPermissionsTests.swift */; };
 		7662212E4E4D77144B9CBE6F /* Pods_SimulatorPermissions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFE0CCB564BEB3FD4A564E8 /* Pods_SimulatorPermissions_Tests.framework */; };
+		AF5B91FD26E41011003F428F /* PermissionsUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B91FC26E41011003F428F /* PermissionsUtilitiesTests.swift */; };
 		D53EA446E76B0A12B118356A /* Pods_SimulatorPermissions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A48DDCC6E22B2EBC99712CE /* Pods_SimulatorPermissions_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,11 +41,12 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SimulatorPermissions_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimulatorPermissions_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* SimulatorPermissionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPermissionsTests.swift; sourceTree = "<group>"; };
 		6CFE0CCB564BEB3FD4A564E8 /* Pods_SimulatorPermissions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimulatorPermissions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C904D9CC0D4789AED6BA3DE /* Pods-SimulatorPermissions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorPermissions_Example.debug.xcconfig"; path = "Target Support Files/Pods-SimulatorPermissions_Example/Pods-SimulatorPermissions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D287B0FA463FC44F8C53FCA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9F15CA572078698345489C2F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AF5B91FC26E41011003F428F /* PermissionsUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsUtilitiesTests.swift; sourceTree = "<group>"; };
 		F57DDCDB295343738AF44CB5 /* Pods-SimulatorPermissions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorPermissions_Tests.release.xcconfig"; path = "Target Support Files/Pods-SimulatorPermissions_Tests/Pods-SimulatorPermissions_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FC43790A9FAD9272C162D4EE /* Pods-SimulatorPermissions_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimulatorPermissions_Example.release.xcconfig"; path = "Target Support Files/Pods-SimulatorPermissions_Example/Pods-SimulatorPermissions_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +126,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* SimulatorPermissionsTests.swift */,
+				AF5B91FC26E41011003F428F /* PermissionsUtilitiesTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -340,7 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* SimulatorPermissionsTests.swift in Sources */,
+				AF5B91FD26E41011003F428F /* PermissionsUtilitiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
