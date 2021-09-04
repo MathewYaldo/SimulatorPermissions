@@ -25,6 +25,9 @@ public class SimulatorPermissions {
         case microphone
         case reminders
     }
+    
+    public init(){}
+    
     private func initializeDatabase(dbPath: String) {
         sqlite3_open(dbPath, &databasePtr)
     }

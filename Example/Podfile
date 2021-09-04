@@ -3,7 +3,7 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'SimulatorPermissions_Example' do
-  pod 'SimulatorPermissions', :path => '../'
+  pod 'SimulatorPermissions', :path => '../Development Pods/'
 
   target 'SimulatorPermissions_Tests' do
     inherit! :search_paths

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SimulatorPermissions
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
             super.viewDidLoad()
-        /*
+        
             print("If this is the first time opening up the app, all services will be unauthorized:")
             SimulatorPermissions().listPermissions()
             print("\n")
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
             SimulatorPermissions().grantPermissions(for: .reminders)
             print("After setting permissions: ")
             SimulatorPermissions().listPermissions()
-        */
+        
     }
 
     override func didReceiveMemoryWarning() {
