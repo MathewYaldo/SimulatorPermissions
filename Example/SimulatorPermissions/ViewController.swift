@@ -12,9 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
             super.viewDidLoad()
-            print("If this is the first time opening up the app, all services will be unauthorized:")
-            SimulatorPermissions().listPermissions()
-            print("\n")
             // Do any additional setup after loading the view.
             SimulatorPermissions().grantPermissions(for: .calendar)
             SimulatorPermissions().grantPermissions(for: .addressBook)

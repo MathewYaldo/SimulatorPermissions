@@ -86,12 +86,24 @@ public class SimulatorPermissions {
             return
         }
         initializeDatabase(dbPath: TCC)
-        let replace = "REPLACE INTO access (service, client, client_type, auth_value, auth_reason, auth_version, flags)"
-        let bindings = " VALUES (?, ?, ?, ? , ?, ?, ?)"
-        let stmt = replace + bindings
         let serviceID = getDatabaseParameterIdentifier(service: service)
         let authVersion = getDatabaseAuthVersion(service: service)
-        executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, 2, 2, authVersion, 0])
+        if #available(iOS 14, *) {
+            let replace = "REPLACE INTO access (service, client, client_type, auth_value, auth_reason, auth_version, flags)"
+            let bindings = " VALUES (?, ?, ?, ? , ?, ?, ?)"
+            let stmt = replace + bindings
+            executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, 2, 2, authVersion, 0])
+        } else if #available(iOS 13, *) {
+            let replace = "REPLACE INTO access (service, client, client_type, allowed, prompt_count)"
+            let bindings = " VALUES (?, ?, ?, ?, ?)"
+            let stmt = replace + bindings
+            executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, authVersion, 1])
+        } else if #available(iOS 12, *) {
+            let replace = "REPLACE INTO access (service, client, client_type, allowed, prompt_count)"
+            let bindings = " VALUES (?, ?, ?, ?, ?)"
+            let stmt = replace + bindings
+            executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, authVersion, 1])
+        }
     }
     public func listPermissions() {
         let calendarAuthorizationStatus = EKEventStore.authorizationStatus(for: .event)
