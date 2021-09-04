@@ -14,11 +14,11 @@ jobs:
         uses: actions/checkout@master
       - name: Build
         run: |
-          xcodebuild clean build -workspace Example/SimulatorPermissions.xcworkspace -scheme "SimulatorPermissions_Example" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean build -workspace Example/SimulatorPermissions.xcworkspace -scheme "SimulatorPermissions-Example" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
         run: |
-          xcodebuild clean test -workspace Example/SimulatorPermissions.xcworkspace -scheme "SimulatorPermissions_Example" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+          xcodebuild clean test -workspace Example/SimulatorPermissions.xcworkspace -scheme "SimulatorPermissions-Example" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
         env: 
          destination: ${{ matrix.destination }}
