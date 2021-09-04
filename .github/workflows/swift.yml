@@ -1,10 +1,10 @@
-name: CI-Test
+name: CI Build
 
 on: [push]
 
 jobs:
   test:
-    name: Test
+    name: Build Example
     runs-on: macos-latest
     strategy:
         matrix:
@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@master
       - name: Build
         run: |
-          xcodebuild clean build -project SimulatorPermissions.xcodeproj -scheme SimulatorPermissions -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean build -project Example/SimulatorPermissions.xcodeproj -scheme SimulatorPermissions -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
