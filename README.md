@@ -24,6 +24,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SimulatorPermissions'
 ```
+New to CocoaPods? [click here for more information and a setup guide](PodSetup.md)
 
 ## Author
 
