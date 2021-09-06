@@ -8,11 +8,14 @@
 import Foundation
 
 public class PermissionsUtilities {
+    
     public init() {}
+    
     public func getDocumentsDirectory() -> [String] {
         let directory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return directory
     }
+    
     public func constructTCCDirectory(directory: String?) -> String {
         if let directory = directory {
             let paths = directory.components(separatedBy: "/Containers/")
