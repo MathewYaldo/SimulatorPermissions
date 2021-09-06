@@ -102,7 +102,6 @@ public class SimulatorPermissions {
             bundle = Bundle.main.bundleIdentifier!
         }
         
-        
         initializeDatabase(dbPath: TCC)
         let serviceID = getDatabaseParameterIdentifier(service: service)
         let authVersion = getDatabaseAuthVersion(service: service)
