@@ -25,6 +25,7 @@ public class SimulatorPermissions {
         case microphone
         case reminders
     }
+    
     public init() {}
     
     private func initializeDatabase(dbPath: String) {
@@ -88,10 +89,12 @@ public class SimulatorPermissions {
     public func grantPermissions(for service: Service) {
         let directory = PermissionsUtilities().getDocumentsDirectory().first
         let TCC = PermissionsUtilities().constructTCCDirectory(directory: directory)
+        
         guard !TCC.isEmpty else {
             print("[SimulatorPermissions] Could not get TCC path.")
             return
         }
+        
         initializeDatabase(dbPath: TCC)
         let serviceID = getDatabaseParameterIdentifier(service: service)
         let authVersion = getDatabaseAuthVersion(service: service)
