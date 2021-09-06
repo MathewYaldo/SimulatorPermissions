@@ -86,7 +86,7 @@ public class SimulatorPermissions {
         }
     }
     
-    public func grantPermissions(for service: Service) {
+    public func grantPermissions(for service: Service, bundleID: String? = nil) {
         let directory = PermissionsUtilities().getDocumentsDirectory().first
         let TCC = PermissionsUtilities().constructTCCDirectory(directory: directory)
         
@@ -95,6 +95,14 @@ public class SimulatorPermissions {
             return
         }
         
+        var bundle: String
+        if let bundleID = bundleID {
+            bundle = bundleID
+        } else {
+            bundle = Bundle.main.bundleIdentifier!
+        }
+        
+        
         initializeDatabase(dbPath: TCC)
         let serviceID = getDatabaseParameterIdentifier(service: service)
         let authVersion = getDatabaseAuthVersion(service: service)
@@ -102,17 +110,17 @@ public class SimulatorPermissions {
             let replace = "REPLACE INTO access (service, client, client_type, auth_value, auth_reason, auth_version, flags)"
             let bindings = " VALUES (?, ?, ?, ? , ?, ?, ?)"
             let stmt = replace + bindings
-            executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, 2, 2, authVersion, 0])
+            executeStatement(statement: stmt, params: [serviceID, bundle, 0, 2, 2, authVersion, 0])
         } else if #available(iOS 13, *) {
             let replace = "REPLACE INTO access (service, client, client_type, allowed, prompt_count)"
             let bindings = " VALUES (?, ?, ?, ?, ?)"
             let stmt = replace + bindings
-            executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, authVersion, 1])
+            executeStatement(statement: stmt, params: [serviceID, bundle, 0, authVersion, 1])
         } else if #available(iOS 12, *) {
             let replace = "REPLACE INTO access (service, client, client_type, allowed, prompt_count)"
             let bindings = " VALUES (?, ?, ?, ?, ?)"
             let stmt = replace + bindings
-            executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, authVersion, 1])
+            executeStatement(statement: stmt, params: [serviceID, bundle, 0, authVersion, 1])
         }
     }
     
