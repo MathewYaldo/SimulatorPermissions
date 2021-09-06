@@ -26,14 +26,17 @@ public class SimulatorPermissions {
         case reminders
     }
     public init() {}
+    
     private func initializeDatabase(dbPath: String) {
         sqlite3_open(dbPath, &databasePtr)
     }
+    
     private func executeStatement(statement: String, params: [Any]) {
         guard databasePtr != nil else {
             print("[SimulatorPermissions] Error: nil database pointer")
             return
         }
+        
         sqlite3_prepare_v2(databasePtr, statement, -1, &statementPtr, nil)
         var col = 1
         for param in params {
@@ -47,9 +50,11 @@ public class SimulatorPermissions {
             }
             col += 1
         }
+        
         sqlite3_step(statementPtr)
         sqlite3_finalize(statementPtr)
     }
+    
     private func getDatabaseParameterIdentifier(service: Service) -> String {
         switch service {
         case .addressBook:
@@ -70,6 +75,7 @@ public class SimulatorPermissions {
             return "kTCCServiceReminders"
         }
     }
+    
     private func getDatabaseAuthVersion(service: Service) -> Int {
         switch service {
         case .addressBook, .calendar, .homekit, .camera, .microphone, .reminders, .contacts:
@@ -78,6 +84,7 @@ public class SimulatorPermissions {
            return 2
         }
     }
+    
     public func grantPermissions(for service: Service) {
         let directory = PermissionsUtilities().getDocumentsDirectory().first
         let TCC = PermissionsUtilities().constructTCCDirectory(directory: directory)
@@ -105,6 +112,7 @@ public class SimulatorPermissions {
             executeStatement(statement: stmt, params: [serviceID, Bundle.main.bundleIdentifier!, 0, authVersion, 1])
         }
     }
+    
     public func listPermissions() {
         let calendarAuthorizationStatus = EKEventStore.authorizationStatus(for: .event)
         let addressBookAuthorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
@@ -116,6 +124,7 @@ public class SimulatorPermissions {
         print(cameraAuthorizationStatus == .authorized ? "Camera Authorized ✅" : "Camera Unauthorized ❌")
         // print(microphoneAuthorizationStatus == .granted ? "Microphone Authorized ✅" : "Microphone Unauthorized ❌")
         print(reminderAuthorizationStatus == .authorized ? "Reminders Authorized ✅" : "Reminders Unauthorized ❌")
+        
         if #available(iOS 13.0, *) {
             let homekitAuthorizationStatus = HMHomeManager().authorizationStatus.contains(.authorized)
             print(homekitAuthorizationStatus ? "HomeKit Authorized ✅" : "HomeKit Unauthorized ❌")
