@@ -11,6 +11,8 @@
 #   - empty_parameters
 #   - vertical_whitespace
 
+disabled_rules:
+  - trailing_whitespace
 included: # paths to include during linting. `--path` is ignored if present.
   - SimulatorPermissions
   - Classes
